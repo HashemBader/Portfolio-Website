@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashem Bader | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 1s ease-in-out;
+        }
+        
+        .dark-mode {
+            background-color: #1a202c;
+            color: #f7fafc;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d3748;
+        }
+        
+        .dark-mode .text-gray-800 {
+            color: #f7fafc;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #cbd5e0;
+        }
+        
+        .dark-mode .bg-gray-100 {
+            background-color: #4a5568;
+        }
+        
+        .dark-mode .border-gray-200 {
+            border-color: #4a5568;
+        }
+        
+        /* Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-40 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">Hashem Bader</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">About</a>
+                    <a href="#experience" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="#skills" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#awards" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Awards</a>
+                    <a href="#contact" class="nav-link text-gray-800 dark:text-white hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-gray-800 dark:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Projects</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Skills</a>
+                <a href="#awards" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Awards</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-800 dark:text-white hover:text-indigo-600 hover:bg-gray-100 dark:hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
+                    Hi, I'm <span class="gradient-text">Hashem Bader</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-6">
+                    Computer Science Student | Software, Data & ML
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">
+                    Computer Science student with hands-on experience across Python, R, SQL, and full-stack development.
+                    I build data-driven applications, dashboards, and ML prototypes that turn raw data into clear, actionable insights.
+                    Comfortable working end-to-end—from data preparation and analysis to modern web interfaces.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg">
+                        Contact Me
+                    </a>
+                    <a href="#projects" class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white rounded-lg font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300">
+                        View Work
+                    </a>
+                </div>
+                <div class="flex mt-8 space-x-4">
+                    <a href="https://github.com/HashemBader" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hashem-bader-7b25092b7/" class="text-gray-600 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 blur-xl"></div>
+                    <img src="/me_pic2.jpg" 
+                         alt="Profile" 
+                         class="relative w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+
+        </div>
+        
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-full">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-4">Professional Summary</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-6">
+                    Computer Science student with hands-on experience in Python, R, SQL, and full-stack development.
+                    Skilled in data analysis, forecasting, and dashboarding, with a strong focus on clean code and clear communication.
+                    Eager to contribute to teams across software engineering, data analytics, and product development.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-2">Name:</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Hashem Bader</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-2">Email:</h4>
+                        <p class="text-gray-600 dark:text-gray-300">hashimloay2@gmail.com</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-2">Phone:</h4>
+                        <p class="text-gray-600 dark:text-gray-300">(902)-314-3268</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-2">From:</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Charlottetown, PE, Canada</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-800 dark:text-white mb-2">Education:</h4>
+                        <p class="text-gray-600 dark:text-gray-300">Bachelor of Science, Major: Computer Science<br>
+                            University of Prince Edward Island, Charlottetown, PE (2022 – 2026)</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                Work <span class="gradient-text">Experience</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                A glimpse into my professional journey and the roles I've undertaken.
+            </p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Job 1 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Data Analyst Intern</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Health PEI</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charlottetown, PE | May 2025 – Jan 2026</p>
+                </div>
+                <div class="md:w-3/4">
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Analyzed healthcare datasets using SQL and DBeaver by querying relational databases to extract, filter, and validate client-specific data.</li>
+                        <li>Connected RStudio to production databases and performed data cleaning, preprocessing, and transformation using R, including removing irrelevant fields and standardizing formats.</li>
+                        <li>Developed data visualizations and analytical reports in R Markdown, translating complex findings into clear charts and narratives for non-technical stakeholders.</li>
+                        <li>Delivered 6 end-to-end analytics projects over an 8-month internship, each aligned with client requirements and reporting objectives.</li>
+                        <li>Collaborated directly with a healthcare client through weekly sprint meetings, gathering requirements, presenting progress, and incorporating feedback using an Agile workflow.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Grader for Computer Science and Math</h3>
+                    <p class="text-gray-600 dark:text-gray-300">University of Prince Edward Island</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charlottetown, PE | Jan 2025 – Apr 2025</p>
+                </div>
+                <div class="md:w-3/4">
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Evaluated 200+ assignments, providing constructive feedback to improve learning outcomes.</li>
+                        <li>Coordinated with professors to ensure grading aligned with learning objectives and supported academic integrity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Student Assistance</h3>
+                    <p class="text-gray-600 dark:text-gray-300">UPEI CS Help Centre</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charlottetown, PE | Sep 2024 – Dec 2024</p>
+                </div>
+                <div class="md:w-3/4">
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Supported 20+ students by explaining core Computer Science concepts and assisting with programming challenges across multiple courses.</li>
+                        <li>Guided peers through problem-solving strategies, debugging techniques, and code optimization practices.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Student Advisor</h3>
+                    <p class="text-gray-600 dark:text-gray-300">UPEI Fitness Centre</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charlottetown, PE | Sep 2023 – Apr 2026</p>
+                </div>
+                <div class="md:w-3/4">
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Managed daily operations in a university athletic facility serving 100+ students, ensuring a clean, safe, and organized workout environment.</li>
+                        <li>Managed membership data and check-ins while assisting with tours and equipment use instructions for new users.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 5 -->
+            <div class="flex flex-col md:flex-row items-start">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white">Front Desk</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Superstore</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Charlottetown, PE | Jan 2023 – May 2024</p>
+                </div>
+                <div class="md:w-3/4">
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Delivered exceptional customer service, maintaining high satisfaction levels.</li>
+                        <li>Handled transactions, resolved customer complaints, and supported team members to meet shift goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                My <span class="gradient-text">Projects</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Here are some of my recent projects. Each one was carefully crafted to solve specific problems.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="btc-forecast.png" 
+                         alt="Cryptocurrency Price Forecasting" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
+                        <span class="bg-purple-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">Time Series</span>
+                        <span class="bg-emerald-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">Data Viz</span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Cryptocurrency Price Forecasting</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Feb 2025</p>
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                        <li>Built a time series forecasting pipeline to predict Bitcoin prices using historical market data.</li>
+                        <li>Applied classical models and evaluated accuracy using MAPE/RMSE.</li>
+                        <li>Explored trends and visualized forecasts with pandas, matplotlib, and seaborn.</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="https://github.com/HashemBader/Cryptocurrency-Forecasting" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 font-medium">GitHub</a>
+                        <a href="https://github.com/HashemBader/Cryptocurrency-Forecasting" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="dashboard.png" 
+                         alt="Unit Management Dashboard" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-sky-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Next.js</span>
+                        <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">React</span>
+                        <span class="bg-indigo-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">SQL</span>
+                        <span class="bg-purple-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">Prisma</span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Unit Management Dashboard</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Mar 2025</p>
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                        <li>Built a full-stack dashboard to replace Excel-based workflows for a unit management company.</li>
+                        <li>Modeled a relational PostgreSQL database with Prisma ORM for units, rentals, payments, and customers.</li>
+                        <li>Delivered interactive charts, filters, and canned reports for occupancy and revenue insights.</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="https://unit-management-dashboard.vercel.app/" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 font-medium">Live Demo</a>
+                        <a href="https://github.com/HashemBader/Unit-Management-Dashboard" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="ml-text-sentiment.png" 
+                         alt="ML Text Sentiment" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
+                        <span class="bg-emerald-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">NLP</span>
+                        <span class="bg-purple-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">ML</span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">ML Text Sentiment App</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Feb 2026</p>
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                        <li>Performed sentiment analysis on the IMDb reviews dataset using TF-IDF features.</li>
+                        <li>Trained Logistic Regression baselines and an MLP classifier with scikit-learn.</li>
+                        <li>Logged experiments with MLflow and generated evaluation plots and reports.</li>
+                        <li>Saved the trained model and integrated the ML model to a UI for real-time predictions.</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="https://ml-text-sentiment-app-l2hu.onrender.com/" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 font-medium">Live Demo</a>
+                        <a href="https://github.com/HashemBader/ML-Text-Sentiment-App" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="monopoly-game.png" 
+                         alt="Monopoly Game" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-indigo-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Java</span>
+                        <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">OOP</span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Monopoly Game</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Nov 2023</p>
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                        <li>Developed a Monopoly simulation in Java using OOP, TDD, and JUnit 5.</li>
+                        <li>Implemented player strategies and a simulation experiment to compare outcomes.</li>
+                        <li>Exported results to CSV for analysis and reporting.</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="https://github.com/HashemBader/Monopoly-Game" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 font-medium">GitHub</a>
+                        <a href="https://github.com/HashemBader/Monopoly-Game" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="database-student.png" 
+                         alt="Database Students" 
+                         class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <span class="bg-emerald-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">SQL</span>
+                        <span class="bg-purple-500 text-white text-xs font-medium px-2.5 py-0.5 rounded ml-1">Database</span>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Database Students</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Feb 2024</p>
+                    <ul class="list-disc pl-5 text-gray-600 dark:text-gray-300 mb-4 space-y-1">
+                        <li>Built an employee/department database system in Python with object-oriented design.</li>
+                        <li>Parsed CSV input, managed records, and reported cross-appointments.</li>
+                        <li>Computed date-based analytics for multi-department assignments.</li>
+                    </ul>
+                    <div class="flex justify-between items-center mt-auto">
+                        <a href="https://github.com/HashemBader/Database-Students" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 font-medium">GitHub</a>
+                        <a href="https://github.com/HashemBader/Database-Students" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-400">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                My <span class="gradient-text">Skills</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Here are the technologies and tools I work with to bring ideas to life.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-6">Technical Skills</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Python</span>
+                            <span class="text-gray-600 dark:text-gray-300">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">R</span>
+                            <span class="text-gray-600 dark:text-gray-300">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">SQL</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">JavaScript / TypeScript</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Node.js</span>
+                            <span class="text-gray-600 dark:text-gray-300">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Java</span>
+                            <span class="text-gray-600 dark:text-gray-300">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">C</span>
+                            <span class="text-gray-600 dark:text-gray-300">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">HTML/CSS & PHP</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-6">Professional Skills</h3>
+                
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Software Development</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Data Analysis</span>
+                            <span class="text-gray-600 dark:text-gray-300">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Forecasting & Time Series</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Dashboarding & BI</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Problem Solving</span>
+                            <span class="text-gray-600 dark:text-gray-300">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Communication</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Debugging & Testing</span>
+                            <span class="text-gray-600 dark:text-gray-300">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium text-gray-800 dark:text-white">Collaboration</span>
+                            <span class="text-gray-600 dark:text-gray-300">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-8 text-center">Tools & Technologies</h3>
+            
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-python text-3xl text-blue-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Python</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-java text-3xl text-red-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Java</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-r-project text-3xl text-blue-400"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">R</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-database text-3xl text-indigo-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">PostgreSQL</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-chart-line text-3xl text-green-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Power BI</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-chart-area text-3xl text-teal-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Pandas/Seaborn/Matplotlib</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-file-excel text-3xl text-emerald-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Excel Automation</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-js text-3xl text-yellow-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">TypeScript</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-node-js text-3xl text-green-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Node.js</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-react text-3xl text-sky-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">React</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-layer-group text-3xl text-blue-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Next.js</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-wind text-3xl text-teal-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Tailwind CSS</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-atom text-3xl text-cyan-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">TanStack Query</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-cubes text-3xl text-purple-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Prisma ORM</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-bolt text-3xl text-amber-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Supabase</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-brain text-3xl text-rose-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">scikit-learn</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-flask text-3xl text-fuchsia-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">MLflow</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-book-open text-3xl text-indigo-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Jupyter</span>
+                </div>
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fab fa-git-alt text-3xl text-orange-600"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Git</span>
+                </div>
+
+
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded-lg shadow-md p-3">
+                        <i class="fas fa-cloud text-3xl text-sky-500"></i>
+                    </div>
+                    <span class="mt-2 text-gray-800 dark:text-white">Google Colab</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                Awards & <span class="gradient-text">Honors</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Recognition for academic excellence and technical presentation impact.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Academic Excellence Award</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">2022 – 2025</p>
+                <p class="text-gray-600 dark:text-gray-300">Received annually for ranking among the top students in the Computer Science program at UPEI.</p>
+            </div>
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Best Presentation Award – Database Systems</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">2024</p>
+                <p class="text-gray-600 dark:text-gray-300">Awarded for delivering the best technical presentation proposing and implementing a database solution to a real-world system problem.</p>
+            </div>
+            <div class="project-card bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Dean’s List</h3>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">2022 – 2025</p>
+                <p class="text-gray-600 dark:text-gray-300">Recognized for maintaining high academic standing throughout the Computer Science program.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                Get In <span class="gradient-text">Touch</span>
+            </h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6"></div>
+            <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+            </p>
+        </div>
+        
+        <div class="flex flex-col lg:flex-row gap-12">
+            <div class="lg:w-1/2">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6">Contact Information</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-500/10 p-3 rounded-lg text-blue-500">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-800 dark:text-white">Email</h4>
+                            <p class="text-gray-600 dark:text-gray-300">hashimloay2@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-purple-500/10 p-3 rounded-lg text-purple-500">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-800 dark:text-white">Phone</h4>
+                            <p class="text-gray-600 dark:text-gray-300">(902)-314-3268</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-green-500/10 p-3 rounded-lg text-green-500">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-medium text-gray-800 dark:text-white">Location</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Charlottetown, PE, Canada</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-lg font-medium text-gray-800 dark:text-white mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/hashem-bader-7b25092b7/" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-800 dark:text-white hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/HashemBader" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 rounded-full shadow-md text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lg:w-1/2">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-800 dark:text-white mb-1">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300" placeholder="Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-white mb-1">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300" placeholder="name@gmail.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-800 dark:text-white mb-1">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300" placeholder="Let me know how I can help you">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-800 dark:text-white mb-1">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300" placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkillBars() {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+        
+        // Intersection Observer for skill bars
+        const skillsSection = document.getElementById('skills');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
